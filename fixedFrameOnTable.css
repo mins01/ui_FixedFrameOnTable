@@ -5,11 +5,13 @@
 .ffot table{
 	width:100%;
   border-collapse: collapse;
+	padding:0;margin:0;
+	/* background-color: #fff; */
 
 }
 .ffot table td ,
 .ffot table th{
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 	word-break: break-all;
 	/* overflow:hidden; */
 	/* white-space : nowrap;
