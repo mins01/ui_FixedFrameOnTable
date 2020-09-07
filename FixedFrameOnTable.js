@@ -23,6 +23,12 @@ FixedFrameOnTable.prototype.init = function(ffot){
 	this.header10 = ffot.querySelector('.ffot-header-10');
 	this.content = ffot.querySelector('.ffot-content');
 	this.useSyncScrollTop = !!ffot.querySelector('.ffot-container-left .ffot-header-10');
+
+	this.initColgroup(this.header00);
+	this.initColgroup(this.header01);
+	this.initColgroup(this.header10);
+	this.initColgroup(this.content);
+
 	this.initEvent();
 }
 FixedFrameOnTable.prototype.initEvent = function(){
@@ -53,6 +59,33 @@ FixedFrameOnTable.prototype.initEvent = function(){
 	}
 
 }
+FixedFrameOnTable.prototype.initColgroup = function(tbl){ //테이블에 colgroup 이 있는지 체크하고 없으면, 만든다.
+	if(!tbl || tbl.nodeName!='TABLE'){ return false;}
+	var cols = tbl.querySelectorAll('col');
+	if(cols.length>0){return true;}
+	let max_count_td = 0;
+	let max_tr = null,tds = null;
+	tbl.querySelectorAll('tr').forEach((tr, i) => {
+		tds = tr.querySelectorAll('td,th')
+		if(max_count_td < tds.length){
+			max_tr = tr;
+		}
+		max_count_td = Math.max(max_count_td,tds.length);
+	});
+	;
+	var colgroup = document.createElement('colgroup');
+	tbl.append(colgroup)
+	let i=0,col=null,rect=null;
+	let max_tds = max_tr.querySelectorAll('td,th');
+	while(i < max_count_td){
+		col = document.createElement('col');
+		rect = max_tds[i].getBoundingClientRect();
+		col.width =rect.width;
+		colgroup.append(col);
+		i++;
+	}
+	return max_count_td;
+}
 FixedFrameOnTable.prototype.sync = function(){
 
 }
@@ -63,18 +96,19 @@ FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
 	this.containerBody.style.left = el.borderBoxSize[0].inlineSize+"px";
 
 	if(this.header01){
-		let height_tds = this.header00.querySelectorAll('tr td:first-child')
-		this.header01.querySelectorAll('tr td:first-child').forEach((item, i) => {
+		let height_tds = this.header00.querySelectorAll('tr > *:first-child')
+		this.header01.querySelectorAll('tr > *:first-child').forEach((item, i) => {
 			let rect = height_tds[i].getBoundingClientRect();
 			item.height = rect.height;
 		});
 	}
 
 	if(this.header10){
-		let width_tds = this.header00.querySelectorAll('tr:first-child td')
-		this.header10.querySelectorAll('tr:first-child td').forEach((item, i) => {
-			let rect = width_tds[i].getBoundingClientRect();
-			item.width = rect.width;
+		let width_cols = this.header00.querySelectorAll('col')
+		this.header10.querySelectorAll('col').forEach((item, i) => {
+			if(!width_cols[i]){return}
+			// let rect = width_cols[i].getBoundingClientRect();
+			item.width = width_cols[i].width;
 		});
 	}
 
@@ -84,17 +118,16 @@ FixedFrameOnTable.prototype.syncSizeContent = function(el){
 	let rect_fbc = el.contentRect
 	if(this.header10){
 		this.header10.style.height = rect_fbc.height+"px";
-		let height_tds = this.content.querySelectorAll('tr td:first-child')
-		this.header10.querySelectorAll('tr td:first-child').forEach((item, i) => {
+		let height_tds = this.content.querySelectorAll('tr > *:first-child')
+		this.header10.querySelectorAll('tr > *:first-child').forEach((item, i) => {
 			let rect = height_tds[i].getBoundingClientRect();
 			item.height = rect.height;
 		});
 	}
 
-
 	if(this.header01){
-		let width_tds = this.content.querySelectorAll('tr:first-child td')
-		this.header01.querySelectorAll('tr:first-child td').forEach((item, i) => {
+		let width_tds = this.content.querySelectorAll('tr:first-child > *')
+		let cols = this.header01.querySelectorAll('col').forEach((item, i) => {
 			let rect = width_tds[i].getBoundingClientRect();
 			item.width = rect.width;
 		});

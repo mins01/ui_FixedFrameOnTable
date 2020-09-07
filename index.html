@@ -59,6 +59,7 @@
 		var ffot11 = new FixedFrameOnTable(document.querySelector('#ffot11'));
 		var ffot12 = new FixedFrameOnTable(document.querySelector('#ffot12'));
 		var ffot13 = new FixedFrameOnTable(document.querySelector('#ffot13'));
+		var ffot21 = new FixedFrameOnTable(document.querySelector('#ffot21'));
 	})
 	</script>
 
@@ -177,7 +178,48 @@
 			</div>
 		</div>
 		<hr>
-
+		<div id="ffot21" class="ffot" style="width:500px;height:300px;" contentEditable>
+			<div  class="ffot-scrollbar" style="" >
+				<div class="ffot-container-left" style="">
+					<table class="ffot-header-00 text-table bg-box" style="background-color:#cab;">
+						<colgroup>
+							<col width="60" />
+							<col width="40" />
+						</colgroup>
+						<tr><th width="50" height="40" colspan="2">00+00</th></tr>
+						<tr><th height="40">00</th><th>00</th></tr>
+					</table>
+					<table class="ffot-header-10 text-table bg-box" style="background-color:#abc;">
+						<colgroup>
+							<col />
+							<col />
+						</colgroup>
+						<tr><th height="100">10</th><th height="100">10</th></tr>
+						<tr><th height="50">20</th><th height="50">20</th></tr>
+						<tr><th height="50">30</th><th height="50">30</th></tr>
+					</table>
+				</div>
+				<div class="ffot-container-body" >
+					<table class="ffot-header-01 text-table bg-box" style="background-color:#bac;">
+						<colgroup>
+							<col />
+							<col />
+							<col />
+						</colgroup>
+						<thead>
+							<tr><th height="100" colspan="2" style="text-align:center">00+01</th><th>02</th></tr>
+							<tr><th height="100">00</th><th>01</th><th>02</th></tr>
+						</thead>
+					</table>
+					<table class="ffot-content text-table bg-box" style="background-color:#dda;">
+						<tr><td height="100" width="200">Hello</td><td width="300">12</td><td width="300">13</td></tr>
+						<tr><td height="50">21</td><td>22</td><td>23</td></tr>
+						<tr><td height="500">31</td><td>32</td><td>33</td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<hr>
 	</div>
 </body>
 </html>
