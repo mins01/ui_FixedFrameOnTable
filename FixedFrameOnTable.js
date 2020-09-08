@@ -93,7 +93,8 @@ FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
 	let ffot= this.ffot
 	let rect_flh = el.contentRect
 	this.header01.style.height = rect_flh.height+"px";
-	this.containerBody.style.left = el.borderBoxSize[0].inlineSize+"px";
+	// this.containerBody.style.left = el.borderBoxSize[0].inlineSize+"px";
+	this.containerBody.style.left = rect_flh.width+"px";
 
 	if(this.header01){
 		let height_tds = this.header00.querySelectorAll('tr > *:first-child')
