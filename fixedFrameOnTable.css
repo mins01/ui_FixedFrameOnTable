@@ -3,7 +3,11 @@
     box-sizing: border-box;
 }
 .ffot table{
+<<<<<<< HEAD
 	width:20px;
+=======
+	width:100%;
+>>>>>>> f87f94f47e5a7279f8eb5c39352de8d16c879e05
 	min-width:20px;
 	min-height:20px;
   border-collapse: collapse;
@@ -27,6 +31,10 @@
 }
 .ffot-scrollbar{
 	overflow:auto; display:flex; height:100%;width:100%;position:relative;
+<<<<<<< HEAD
+=======
+	padding:0 5px 5px 0;
+>>>>>>> f87f94f47e5a7279f8eb5c39352de8d16c879e05
 }
 
 .ffot-container-left{
@@ -67,5 +75,11 @@
 }
 .ffot-content table ,
 table.ffot-content{
+<<<<<<< HEAD
 	width:20px;
+=======
+
+	table-layout: fixed;
+	border-width:0px;
+>>>>>>> f87f94f47e5a7279f8eb5c39352de8d16c879e05
 }
