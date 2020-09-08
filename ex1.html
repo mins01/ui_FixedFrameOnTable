@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="ko" >
+<head>
+	<title>fixed frame on table</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://www.mins01.com/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script src="/js/ForGoogle.js"></script>
+	<!-- google analytics -->
+	<script>ForGoogle.analytics()</script>
+
+
+	<!-- jquery 관련 -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+	<!-- 부트스트랩 4 : IE8지원안됨! -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<!-- vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<!-- meta og -->
+
+	<meta property="og:title" content="fixed frame on table">
+	<meta property="og:description" content="fixed frame on table">
+	<meta name="og:image" content="http://www.mins01.com/img/logo.gif">
+	<meta property="og:image:width" content="190">
+	<meta property="og:image:height" content="70" />
+	<meta property="og:site_name" content="fixed frame on table" />
+	<meta property="og:type" content="website">
+
+	<!-- //meta og -->
+
+	<link rel="stylesheet" href="fixedFrameOnTable.css" >
+	<style>
+	.bg-box{background-image: url("bg_box.png")}
+	.test-table{
+
+	}
+	.test-table td ,
+	.test-table th{
+		border: 1px solid #000;
+	}
+	</style>
+	<script src="FixedFrameOnTable.js"></script>
+	<script>
+	$(function(){
+		var ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
+
+	})
+	</script>
+
+	<style>
+
+
+	.c-rank{background-color: #eee; }
+		.c-rank-1{background-color: rgb(250,125,125);}
+			.c-rank-2{background-color: rgb(245,123,123);}
+			.c-rank-3{background-color: rgb(240,120,120);}
+			.c-rank-4{background-color: rgb(235,118,118);}
+			.c-rank-5{background-color: rgb(230,115,115);}
+			.c-rank-6{background-color: rgb(225,113,113);}
+			.c-rank-7{background-color: rgb(219,110,110);}
+			.c-rank-8{background-color: rgb(214,107,107);}
+			.c-rank-9{background-color: rgb(209,105,105);}
+			.c-rank-10{background-color: rgb(204,102,102);}
+			.c-rank-11{background-color: rgb(199,100,100);}
+			.c-rank-12{background-color: rgb(194,97,97);}
+			.c-rank-13{background-color: rgb(189,95,95);}
+			.c-rank-14{background-color: rgb(184,92,92);}
+			.c-rank-15{background-color: rgb(179,90,90);}
+			.c-rank-16{background-color: rgb(174,87,87);}
+			.c-rank-17{background-color: rgb(169,85,85);}
+			.c-rank-18{background-color: rgb(164,82,82);}
+			.c-rank-19{background-color: rgb(158,79,79);}
+			.c-rank-20{background-color: rgb(153,77,77);}
+			.c-rank-21{background-color: rgb(148,74,74);}
+			.c-rank-22{background-color: rgb(143,72,72);}
+			.c-rank-23{background-color: rgb(138,69,69);}
+			.c-rank-24{background-color: rgb(133,67,67);}
+			.c-rank-25{background-color: rgb(128,64,64);}
+			.c-rank-26{background-color: rgb(125,250,125);}
+			.c-rank-27{background-color: rgb(123,245,123);}
+			.c-rank-28{background-color: rgb(120,240,120);}
+			.c-rank-29{background-color: rgb(118,235,118);}
+			.c-rank-30{background-color: rgb(115,230,115);}
+			.c-rank-31{background-color: rgb(113,225,113);}
+			.c-rank-32{background-color: rgb(110,219,110);}
+			.c-rank-33{background-color: rgb(107,214,107);}
+			.c-rank-34{background-color: rgb(105,209,105);}
+			.c-rank-35{background-color: rgb(102,204,102);}
+			.c-rank-36{background-color: rgb(100,199,100);}
+			.c-rank-37{background-color: rgb(97,194,97);}
+			.c-rank-38{background-color: rgb(95,189,95);}
+			.c-rank-39{background-color: rgb(92,184,92);}
+			.c-rank-40{background-color: rgb(90,179,90);}
+			.c-rank-41{background-color: rgb(87,174,87);}
+			.c-rank-42{background-color: rgb(85,169,85);}
+			.c-rank-43{background-color: rgb(82,164,82);}
+			.c-rank-44{background-color: rgb(79,158,79);}
+			.c-rank-45{background-color: rgb(77,153,77);}
+			.c-rank-46{background-color: rgb(74,148,74);}
+			.c-rank-47{background-color: rgb(72,143,72);}
+			.c-rank-48{background-color: rgb(69,138,69);}
+			.c-rank-49{background-color: rgb(67,133,67);}
+			.c-rank-50{background-color: rgb(64,128,64);}
+
+
+	.c-slope-p{color: red;}
+	.c-slope-m{color: blue;}
+
+	.c-step-m{color: red;}
+	.c-step-m::before{content: "⤴️ "; }
+	.c-step-p{color: blue;}
+	.c-step-p::before{content: "⤵️ ";}
+
+
+	.c-dev-10{background-color: #ffc83c;}
+
+
+	.c-step-OUT{background-color: #aaa;padding-left:0 !important;padding-right:0 !important}
+	.c-step-OUT::before{content: ""}
+	.c-step-NEW{background-color: #ffc83c;padding-left:0 !important;padding-right:0 !important}
+	.c-step-NEW::before{content: ""}
+
+	.c-step-0{color: green; }
+	.c-step-0::before{content: "➡️";}
+	.c-rank-999{text-decoration: line-through;background-color: #aaa;}
+	.c-view{font-size: 8px;}
+	</style>
+
+</head>
+<body>
+	<div class="container-x">
+		<h1>fixed frame on table</h1>
+		<h2>복잡한 구조 예제</h2>
+		<div id="ffot01" class="ffot" style="width:auto;margin:0 10px;max-width:100%;height:600px">
+			<div class="ffot-scrollbar" style="">
+				<div class="ffot-container-left" style="">
+					<table class="ffot-header-00 table table-condensed table-sm table-bordered" style="padding:0;margin:0; background-color:#fff;">
+						<colgroup>
+							<col width="120">
+
+						</colgroup>
+						<thead style="background-color:#eee;">
+							<tr>
+								<th class="text-center">
+									검색어
+								</th>
+
+							</tr>
+							<tr>
+								<th class="text-center align-middle" style="min-width:8em;height:4em">키워드</th>
+							</tr>
+						</thead>
+					</table>
+					<table class="ffot-header-10 table table-condensed table-sm table-bordered" style="padding: 0px; margin: 0px; background-color: rgb(255, 255, 255); height: 2500px; transform: translateY(0px);">
+						<tbody class="text-center">
+							<tr>
+								<td class="text-left" height="50">헤드셋</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">스피커</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">공기청정기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">마우스</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">키보드</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">무선키보드마우스세트</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">블루투스이어폰</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">다리미</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">면도기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">에어팟프로</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">믹서기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">닌텐도스위치</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">모니터받침대</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">무선이어폰</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">이어폰</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">냉장고</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">로봇청소기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">버티컬마우스</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">에어프라이어</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">아이리버모니터받침대</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">브리츠이어폰</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">노트북</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">lg정수기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">와플메이커</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">스팀다리미</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">제습기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">갤럭시버즈플러스</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">전자레인지</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">블루투스스피커</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">쿠쿠정수기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">김치냉장고</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">청소기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">웹캠</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">무선청소기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">마우스패드</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">갤럭시버즈라이브</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">코웨이정수기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">아이패드에어3</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">칫솔살균기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">아이패드</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">세탁기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">음식물처리기</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">삼각대</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">갤럭시노트20필름</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">로지텍k380</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">블랙박스</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">에어팟</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">블루투스키보드</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">온수매트</td>
+							</tr>
+							<tr>
+								<td class="text-left" height="50">모니터</td>
+							</tr>
+
+						</tbody>
+						<colgroup><col width="120"></colgroup></table>
+					</div>
+					<div class="ffot-container-body" style="left: 121px;">
+						<table class="ffot-header-01 table table-condensed table-sm table-bordered" style="padding: 0px; margin: 0px; background-color: rgb(255, 255, 255); height: 95px;">
+							<colgroup>
+								<col width="60">
+								<col width="60">
+								<col width="60">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+								<col width="40">
+							</colgroup>
+							<thead style="background-color:#eee;">
+
+								<tr>
+									<th class="text-center align-middle" rowspan="2" height="32">평균<br>랭크</th>
+									<th class="text-center align-middle" rowspan="2">표준<br>편차</th>
+									<th class="text-center align-middle" rowspan="2">상승세</th>
+									<th class="text-center align-middle" rowspan="2">총<br>일자</th>
+									<th class="text-center align-middle" colspan="13">랭크 2020-08-26 ~ 2020-09-07 (12일간)</th>
+								</tr>
+								<tr>
+									<!-- <th class="text-center align-middle">평균<br>랭크</th>
+									<th class="text-center align-middle">표준<br>편차</th>
+									<th class="text-center align-middle">상승세</th>
+									<th class="text-center align-middle">총<br>일자</th> -->
+									<th style="min-width:2.5em;" class="text-center align-middle" height="62">08<br>
+										26</th>
+										<th style="min-width:2.5em;" class="text-center align-middle">08<br>
+											27</th>
+											<th style="min-width:2.5em;" class="text-center align-middle">08<br>
+												28</th>
+												<th style="min-width:2.5em;" class="text-center align-middle">08<br>
+													29</th>
+													<th style="min-width:2.5em;" class="text-center align-middle">08<br>
+														30</th>
+														<th style="min-width:2.5em;" class="text-center align-middle">08<br>
+															31</th>
+															<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																01</th>
+																<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																	02</th>
+																	<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																		03</th>
+																		<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																			04</th>
+																			<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																				05</th>
+																				<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																					06</th>
+																					<th style="min-width:2.5em;" class="text-center align-middle">09<br>
+																						07</th>
+																					</tr>
+																				</thead>
+																			</table>
+																			<table class="ffot-content table table-condensed table-sm table-bordered" style="padding:0;margin:0; background-color:#fff;width:20px !important">
+																				<colgroup>
+																					<col width="60">
+																					<col width="60">
+																					<col width="60">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																					<col width="40">
+																				</colgroup>
+																				<tbody class="text-center">
+
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-1">1.77</td>
+																						<td class="">2.88</td>
+																						<td class="c-step--43 c-step-m">43%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-2">2.15</td>
+																						<td class="">3.42</td>
+																						<td class="c-step--7 c-step-m">7%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-7">7.54</td>
+																						<td class="">22.74</td>
+																						<td class="c-step--60 c-step-m">60%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-2">2.92</td>
+																						<td class="">5.38</td>
+																						<td class="c-step-37 c-step-p">37%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-2">2<div class="c-view">996</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-7">7.08</td>
+																						<td class="">8.77</td>
+																						<td class="c-step--29 c-step-m">29%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-1">1<div class="c-view">998</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-7">7.54</td>
+																						<td class="">3.9</td>
+																						<td class="c-step--20 c-step-m">20%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-5">5.85</td>
+																						<td class="">3.11</td>
+																						<td class="c-step-20 c-step-p">20%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																						<td height="50" class="c-rank c-rank-7">7<div class="c-view">986</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-4">4.85</td>
+																						<td class="">4.66</td>
+																						<td class="c-step-65 c-step-p">65%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-4">4<div class="c-view">992</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-6">6<div class="c-view">988</div></td>
+																						<td height="50" class="c-rank c-rank-5">5<div class="c-view">990</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-9">9.08</td>
+																						<td class="">2.63</td>
+																						<td class="c-step--1 c-step-m">1%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-13">13.85</td>
+																						<td class="">22.49</td>
+																						<td class="c-step--28 c-step-m">28%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-9">9<div class="c-view">982</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-3">3<div class="c-view">994</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-12">12.92</td>
+																						<td class="">4.35</td>
+																						<td class="c-step--15 c-step-m">15%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-10">10.62</td>
+																						<td class="">5.92</td>
+																						<td class="c-step-13 c-step-p">13%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-12">12.54</td>
+																						<td class="">6.42</td>
+																						<td class="c-step-4 c-step-p">4%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-10">10<div class="c-view">980</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-13">13.15</td>
+																						<td class="">6.46</td>
+																						<td class="c-step-6 c-step-p">6%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-14">14.62</td>
+																						<td class="">5.57</td>
+																						<td class="c-step-3 c-step-p">3%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-15">15.08</td>
+																						<td class="">7.81</td>
+																						<td class="c-step-6 c-step-p">6%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-13">13<div class="c-view">974</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-12">12<div class="c-view">976</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-14">14.77</td>
+																						<td class="">14.71</td>
+																						<td class="c-step-15 c-step-p">15%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-8">8<div class="c-view">984</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-11">11<div class="c-view">978</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-14">14<div class="c-view">972</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-17">17.31</td>
+																						<td class="">5.55</td>
+																						<td class="c-step-4 c-step-p">4%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-16">16<div class="c-view">968</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-15">15<div class="c-view">970</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-23">23.85</td>
+																						<td class="">11.56</td>
+																						<td class="c-step--20 c-step-m">20%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-19">19.77</td>
+																						<td class="">4.93</td>
+																						<td class="c-step-1 c-step-p">1%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-397">397.31</td>
+																						<td class="c-dev-10">1715.09</td>
+																						<td class="c-step--95 c-step-m">95%</td>
+																						<td>8</td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-21">21.77</td>
+																						<td class="">6.35</td>
+																						<td class="c-step-1 c-step-p">1%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-19">19<div class="c-view">962</div></td>
+																						<td height="50" class="c-rank c-rank-20">20<div class="c-view">960</div></td>
+																						<td height="50" class="c-rank c-rank-18">18<div class="c-view">964</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																						<td height="50" class="c-rank c-rank-22">22<div class="c-view">956</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-67">67.77</td>
+																						<td class="c-dev-10">113.69</td>
+																						<td class="c-step--66 c-step-m">66%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-85">85<div class="c-view">830</div></td>
+																						<td height="50" class="c-rank c-rank-61">61<div class="c-view">878</div></td>
+																						<td height="50" class="c-rank c-rank-50">50<div class="c-view">900</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-52">52<div class="c-view">896</div></td>
+																						<td height="50" class="c-rank c-rank-66">66<div class="c-view">868</div></td>
+																						<td height="50" class="c-rank c-rank-105">105<div class="c-view">790</div></td>
+																						<td height="50" class="c-rank c-rank-151">151<div class="c-view">698</div></td>
+																						<td height="50" class="c-rank c-rank-73">73<div class="c-view">854</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-79">79<div class="c-view">842</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-31">31.92</td>
+																						<td class="">19.77</td>
+																						<td class="c-step--25 c-step-m">25%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-36">36.23</td>
+																						<td class="">15.76</td>
+																						<td class="c-step--31 c-step-m">31%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-26">26.31</td>
+																						<td class="">22.29</td>
+																						<td class="c-step--1 c-step-m">1%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-17">17<div class="c-view">966</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-21">21<div class="c-view">958</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-27">27.92</td>
+																						<td class="">12.69</td>
+																						<td class="c-step--3 c-step-m">3%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-32">32.69</td>
+																						<td class="">19.36</td>
+																						<td class="c-step--14 c-step-m">14%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-29">29.77</td>
+																						<td class="">11.68</td>
+																						<td class="c-step--3 c-step-m">3%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-95">95.08</td>
+																						<td class="c-dev-10">131.5</td>
+																						<td class="c-step--68 c-step-m">68%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-119">119<div class="c-view">762</div></td>
+																						<td height="50" class="c-rank c-rank-71">71<div class="c-view">858</div></td>
+																						<td height="50" class="c-rank c-rank-97">97<div class="c-view">806</div></td>
+																						<td height="50" class="c-rank c-rank-106">106<div class="c-view">788</div></td>
+																						<td height="50" class="c-rank c-rank-109">109<div class="c-view">782</div></td>
+																						<td height="50" class="c-rank c-rank-99">99<div class="c-view">802</div></td>
+																						<td height="50" class="c-rank c-rank-134">134<div class="c-view">732</div></td>
+																						<td height="50" class="c-rank c-rank-175">175<div class="c-view">650</div></td>
+																						<td height="50" class="c-rank c-rank-96">96<div class="c-view">808</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-94">94<div class="c-view">812</div></td>
+																						<td height="50" class="c-rank c-rank-61">61<div class="c-view">878</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-31">31.54</td>
+																						<td class="">18.2</td>
+																						<td class="c-step--2 c-step-m">2%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-27">27.31</td>
+																						<td class="">8.17</td>
+																						<td class="c-step-17 c-step-p">17%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-28">28<div class="c-view">944</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-39">39.85</td>
+																						<td class="c-dev-10">55.08</td>
+																						<td class="c-step--17 c-step-m">17%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-66">66<div class="c-view">868</div></td>
+																						<td height="50" class="c-rank c-rank-56">56<div class="c-view">888</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-26">26<div class="c-view">948</div></td>
+																						<td height="50" class="c-rank c-rank-23">23<div class="c-view">954</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-60">60<div class="c-view">880</div></td>
+																						<td height="50" class="c-rank c-rank-62">62<div class="c-view">876</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-29">29.08</td>
+																						<td class="">11.53</td>
+																						<td class="c-step-17 c-step-p">17%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-24">24<div class="c-view">952</div></td>
+																						<td height="50" class="c-rank c-rank-30">30<div class="c-view">940</div></td>
+																						<td height="50" class="c-rank c-rank-25">25<div class="c-view">950</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-27">27<div class="c-view">946</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-36">36.85</td>
+																						<td class="">20.04</td>
+																						<td class="c-step--5 c-step-m">5%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-31">31<div class="c-view">938</div></td>
+																						<td height="50" class="c-rank c-rank-32">32<div class="c-view">936</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-39">39.62</td>
+																						<td class="">28.41</td>
+																						<td class="c-step--9 c-step-m">9%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-57">57<div class="c-view">886</div></td>
+																						<td height="50" class="c-rank c-rank-55">55<div class="c-view">890</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-29">29<div class="c-view">942</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-146">146.54</td>
+																						<td class="c-dev-10">301.96</td>
+																						<td class="c-step--75 c-step-m">75%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-117">117<div class="c-view">766</div></td>
+																						<td height="50" class="c-rank c-rank-100">100<div class="c-view">800</div></td>
+																						<td height="50" class="c-rank c-rank-85">85<div class="c-view">830</div></td>
+																						<td height="50" class="c-rank c-rank-79">79<div class="c-view">842</div></td>
+																						<td height="50" class="c-rank c-rank-107">107<div class="c-view">786</div></td>
+																						<td height="50" class="c-rank c-rank-124">124<div class="c-view">752</div></td>
+																						<td height="50" class="c-rank c-rank-167">167<div class="c-view">666</div></td>
+																						<td height="50" class="c-rank c-rank-216">216<div class="c-view">568</div></td>
+																						<td height="50" class="c-rank c-rank-143">143<div class="c-view">714</div></td>
+																						<td height="50" class="c-rank c-rank-388">388<div class="c-view">224</div></td>
+																						<td height="50" class="c-rank c-rank-193">193<div class="c-view">614</div></td>
+																						<td height="50" class="c-rank c-rank-149">149<div class="c-view">702</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-48">48.15</td>
+																						<td class="c-dev-10">54.73</td>
+																						<td class="c-step--21 c-step-m">21%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-69">69<div class="c-view">862</div></td>
+																						<td height="50" class="c-rank c-rank-75">75<div class="c-view">850</div></td>
+																						<td height="50" class="c-rank c-rank-55">55<div class="c-view">890</div></td>
+																						<td height="50" class="c-rank c-rank-62">62<div class="c-view">876</div></td>
+																						<td height="50" class="c-rank c-rank-70">70<div class="c-view">860</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-41">41.23</td>
+																						<td class="">21.87</td>
+																						<td class="c-step--5 c-step-m">5%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-56">56<div class="c-view">888</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-43">43.69</td>
+																						<td class="">27.07</td>
+																						<td class="c-step--8 c-step-m">8%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-58">58<div class="c-view">884</div></td>
+																						<td height="50" class="c-rank c-rank-52">52<div class="c-view">896</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-54">54<div class="c-view">892</div></td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-34">34<div class="c-view">932</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-37">37<div class="c-view">926</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-43">43.38</td>
+																						<td class="">14.67</td>
+																						<td class="c-step--5 c-step-m">5%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-40">40<div class="c-view">920</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-36">36<div class="c-view">928</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-78">78.15</td>
+																						<td class="c-dev-10">103.57</td>
+																						<td class="c-step--46 c-step-m">46%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-57">57<div class="c-view">886</div></td>
+																						<td height="50" class="c-rank c-rank-99">99<div class="c-view">802</div></td>
+																						<td height="50" class="c-rank c-rank-64">64<div class="c-view">872</div></td>
+																						<td height="50" class="c-rank c-rank-67">67<div class="c-view">866</div></td>
+																						<td height="50" class="c-rank c-rank-58">58<div class="c-view">884</div></td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-78">78<div class="c-view">844</div></td>
+																						<td height="50" class="c-rank c-rank-127">127<div class="c-view">746</div></td>
+																						<td height="50" class="c-rank c-rank-128">128<div class="c-view">744</div></td>
+																						<td height="50" class="c-rank c-rank-109">109<div class="c-view">782</div></td>
+																						<td height="50" class="c-rank c-rank-91">91<div class="c-view">818</div></td>
+																						<td height="50" class="c-rank c-rank-42">42<div class="c-view">916</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-67">67.38</td>
+																						<td class="c-dev-10">50.19</td>
+																						<td class="c-step--36 c-step-m">36%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-52">52<div class="c-view">896</div></td>
+																						<td height="50" class="c-rank c-rank-53">53<div class="c-view">894</div></td>
+																						<td height="50" class="c-rank c-rank-82">82<div class="c-view">836</div></td>
+																						<td height="50" class="c-rank c-rank-87">87<div class="c-view">826</div></td>
+																						<td height="50" class="c-rank c-rank-89">89<div class="c-view">822</div></td>
+																						<td height="50" class="c-rank c-rank-79">79<div class="c-view">842</div></td>
+																						<td height="50" class="c-rank c-rank-72">72<div class="c-view">856</div></td>
+																						<td height="50" class="c-rank c-rank-70">70<div class="c-view">860</div></td>
+																						<td height="50" class="c-rank c-rank-63">63<div class="c-view">874</div></td>
+																						<td height="50" class="c-rank c-rank-63">63<div class="c-view">874</div></td>
+																						<td height="50" class="c-rank c-rank-70">70<div class="c-view">860</div></td>
+																						<td height="50" class="c-rank c-rank-53">53<div class="c-view">894</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-861">861.92</td>
+																						<td class="c-dev-10">1162.62</td>
+																						<td class="c-step--95 c-step-m">95%</td>
+																						<td>2</td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-172">172<div class="c-view">656</div></td>
+																						<td height="50" class="c-rank c-rank-44">44<div class="c-view">912</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-55">55.69</td>
+																						<td class="">44.77</td>
+																						<td class="c-step--19 c-step-m">19%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-87">87<div class="c-view">826</div></td>
+																						<td height="50" class="c-rank c-rank-68">68<div class="c-view">864</div></td>
+																						<td height="50" class="c-rank c-rank-66">66<div class="c-view">868</div></td>
+																						<td height="50" class="c-rank c-rank-64">64<div class="c-view">872</div></td>
+																						<td height="50" class="c-rank c-rank-62">62<div class="c-view">876</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-44">44<div class="c-view">912</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-50">50<div class="c-view">900</div></td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-56">56.08</td>
+																						<td class="">32.39</td>
+																						<td class="c-step--18 c-step-m">18%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-61">61<div class="c-view">878</div></td>
+																						<td height="50" class="c-rank c-rank-64">64<div class="c-view">872</div></td>
+																						<td height="50" class="c-rank c-rank-67">67<div class="c-view">866</div></td>
+																						<td height="50" class="c-rank c-rank-65">65<div class="c-view">870</div></td>
+																						<td height="50" class="c-rank c-rank-71">71<div class="c-view">858</div></td>
+																						<td height="50" class="c-rank c-rank-62">62<div class="c-view">876</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-54">54<div class="c-view">892</div></td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																						<td height="50" class="c-rank c-rank-54">54<div class="c-view">892</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-44">44<div class="c-view">912</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-46">46</td>
+																						<td class="">25.38</td>
+																						<td class="c-step-2 c-step-p">2%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-54">54<div class="c-view">892</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-52">52<div class="c-view">896</div></td>
+																						<td height="50" class="c-rank c-rank-59">59<div class="c-view">882</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-46">46<div class="c-view">908</div></td>
+																						<td height="50" class="c-rank c-rank-33">33<div class="c-view">934</div></td>
+																						<td height="50" class="c-rank c-rank-35">35<div class="c-view">930</div></td>
+																						<td height="50" class="c-rank c-rank-47">47<div class="c-view">906</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-57">57.54</td>
+																						<td class="">42.23</td>
+																						<td class="c-step--17 c-step-m">17%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-73">73<div class="c-view">854</div></td>
+																						<td height="50" class="c-rank c-rank-65">65<div class="c-view">870</div></td>
+																						<td height="50" class="c-rank c-rank-62">62<div class="c-view">876</div></td>
+																						<td height="50" class="c-rank c-rank-76">76<div class="c-view">848</div></td>
+																						<td height="50" class="c-rank c-rank-77">77<div class="c-view">846</div></td>
+																						<td height="50" class="c-rank c-rank-56">56<div class="c-view">888</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																						<td height="50" class="c-rank c-rank-55">55<div class="c-view">890</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-48">48<div class="c-view">904</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-641">641.31</td>
+																						<td class="c-dev-10">1444.08</td>
+																						<td class="c-step--92 c-step-m">92%</td>
+																						<td>6</td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-999">999<div class="c-view">0</div></td>
+																						<td height="50" class="c-rank c-rank-494">494<div class="c-view">12</div></td>
+																						<td height="50" class="c-rank c-rank-339">339<div class="c-view">322</div></td>
+																						<td height="50" class="c-rank c-rank-236">236<div class="c-view">528</div></td>
+																						<td height="50" class="c-rank c-rank-154">154<div class="c-view">692</div></td>
+																						<td height="50" class="c-rank c-rank-72">72<div class="c-view">856</div></td>
+																						<td height="50" class="c-rank c-rank-49">49<div class="c-view">902</div></td>
+																					</tr>
+																					<tr class="text-center">
+																						<td class="c-rank c-rank-43">43.38</td>
+																						<td class="">16.46</td>
+																						<td class="c-step-15 c-step-p">15%</td>
+																						<td>13</td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-51">51<div class="c-view">898</div></td>
+																						<td height="50" class="c-rank c-rank-45">45<div class="c-view">910</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-41">41<div class="c-view">918</div></td>
+																						<td height="50" class="c-rank c-rank-44">44<div class="c-view">912</div></td>
+																						<td height="50" class="c-rank c-rank-38">38<div class="c-view">924</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-39">39<div class="c-view">922</div></td>
+																						<td height="50" class="c-rank c-rank-44">44<div class="c-view">912</div></td>
+																						<td height="50" class="c-rank c-rank-43">43<div class="c-view">914</div></td>
+																						<td height="50" class="c-rank c-rank-50">50<div class="c-view">900</div></td>
+																					</tr>
+
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</div>
+	</div>
+</body>
+</html>
