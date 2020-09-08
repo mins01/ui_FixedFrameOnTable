@@ -67,11 +67,5 @@
 }
 .ffot-content table ,
 table.ffot-content{
-<<<<<<< HEAD
 	width:20px;
-=======
-
-	table-layout: fixed;
-	border-width:0px;
->>>>>>> f87f94f47e5a7279f8eb5c39352de8d16c879e05
 }
