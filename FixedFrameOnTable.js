@@ -118,6 +118,26 @@ FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
 FixedFrameOnTable.prototype.syncSizeContent = function(el){
 	let ffot= this.ffot
 	let rect_fbc = el.contentRect
+
+	if(this.content.nodeName =='TABLE'){
+		let rect_scrollbar = this.scrollbar.getBoundingClientRect();
+		let rect_content = this.content.getBoundingClientRect();
+		if(this.containerLeft){
+			let rect_containerLeft = this.containerLeft.getBoundingClientRect();
+			if(rect_scrollbar.width <= rect_containerLeft.width+rect_content.width ){
+				this.content.style.width="100%";
+			}else{
+				delete this.content.style.width;
+			}
+		}else{
+			if(rect_scrollbar.width <= rect_content.width ){
+				this.content.style.width="100%";
+			}else{
+				delete this.content.style.width;
+			}
+		}
+	}
+
 	if(this.header10){
 		this.header10.style.height = rect_fbc.height+"px";
 		let height_tds = this.content.querySelectorAll('tr > *:first-child')
