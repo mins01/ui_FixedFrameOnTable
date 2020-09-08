@@ -91,7 +91,8 @@ FixedFrameOnTable.prototype.sync = function(){
 }
 FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
 	let ffot= this.ffot
-	let rect_flh = el.contentRect
+	// let rect_flh = el.contentRect
+	let rect_flh = el.target.getBoundingClientRect();
 	this.header01.style.height = rect_flh.height+"px";
 	// this.containerBody.style.left = el.borderBoxSize[0].inlineSize+"px";
 	this.containerBody.style.left = rect_flh.width+"px";
