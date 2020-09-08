@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 .ffot table{
-	width:20px;
+	width:auto;
 	min-width:20px;
 	min-height:20px;
   border-collapse: collapse;
