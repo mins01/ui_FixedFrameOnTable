@@ -54,8 +54,17 @@
 	var ffot01 = null;
 	$(function(){
 		ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
-
 	})
+	function save_table_csv(){
+		var fn = "test_ffot"
+		fn+=".csv";
+
+		var dataURL = 'data:application/csv;charset=utf-8,' + encodeURIComponent(FixedFrameOnTable.dataToCsv(ffot01.toData()));
+		var a = document.createElement('a');
+		a.download = fn;
+		a.href = dataURL;
+		a.click()
+	}
 	</script>
 
 	<style>
@@ -147,6 +156,9 @@
 	<div class="container-x">
 		<h1>fixed frame on table</h1>
 		<h2>복잡한 구조 예제</h2>
+		<div class="text-right">
+			<button type="button" class="btn btn-info m-1" onclick="save_table_csv()">csv (UTF-8) 다운로드</button>
+		</div>
 		<div id="ffot01" class="ffot" style="width:auto;margin:0 10px;max-width:100%;height:600px">
 			<div class="ffot-scrollbar" style="">
 				<div class="ffot-container-left" style="">
