@@ -52,13 +52,14 @@
 	<script src="FixedFrameOnTable.js"></script>
 	<script>
 	$(function(){
-		var ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
-		var ffot11 = new FixedFrameOnTable(document.querySelector('#ffot11'));
-		var ffot12 = new FixedFrameOnTable(document.querySelector('#ffot12'));
-		var ffot13 = new FixedFrameOnTable(document.querySelector('#ffot13'));
-		var ffot21 = new FixedFrameOnTable(document.querySelector('#ffot21'));
-		var ffot22 = new FixedFrameOnTable(document.querySelector('#ffot22'));
-		var ffot23 = new FixedFrameOnTable(document.querySelector('#ffot23'));
+		ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
+		ffot11 = new FixedFrameOnTable(document.querySelector('#ffot11'));
+		ffot11_2 = new FixedFrameOnTable(document.querySelector('#ffot11-2'));
+		ffot12 = new FixedFrameOnTable(document.querySelector('#ffot12'));
+		ffot13 = new FixedFrameOnTable(document.querySelector('#ffot13'));
+		ffot21 = new FixedFrameOnTable(document.querySelector('#ffot21'));
+		ffot22 = new FixedFrameOnTable(document.querySelector('#ffot22'));
+		ffot23 = new FixedFrameOnTable(document.querySelector('#ffot23'));
 	})
 	</script>
 
@@ -77,7 +78,7 @@
 				<li><a href="ex1.html" target="_blank">복잡한 구조 예제</a></li>
 			</ul>
 		</div>
-		<div id="ffot01" class="ffot" style="width:500px;height:300px;">
+		<div id="ffot01" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
 			<div  class="ffot-scrollbar" style="" onscroll="" >
 				<div class="ffot-container-left">
 					<div class="ffot-header-00">
@@ -102,7 +103,7 @@
 		<button type="btn btn-info" onclick="document.querySelector('#textContent').innerHTML+='<br>'+document.querySelector('#textContent').innerHTML">content 내용수정</button>
 		<button type="btn btn-info" onclick="document.querySelector('#testFixedLeft').innerHTML+='<br>'+document.querySelector('#testFixedLeft').innerHTML">fixed left 내용수정</button>
 		<hr>
-		<div id="ffot02" class="ffot" style="width:500px;height:300px;">
+		<div id="ffot02" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-body" style="">
 					<div class="bg-box ffot-header-01" style="width:1000px;height:50px;background-color:#bac;">fixed left</div>
@@ -115,7 +116,7 @@
 		.test-table{ }
 		.test-table td{}
 		</style>
-		<div id="ffot03" class="ffot" style="width:500px;height:300px;">
+		<div id="ffot03" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-body ffot-container-body-dir-row" >
 					<div class="bg-box ffot-header-10 " style="width:300px;height:500px;background-color:#abc;">fixed right</div>
@@ -124,7 +125,7 @@
 			</div>
 		</div>
 		<hr>
-		<div id="ffot11" class="ffot" style="width:500px;height:300px;" contentEditable>
+		<div id="ffot11" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;" contentEditable>
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-left" style="">
 					<table class="ffot-header-00 test-table bg-box" style="background-color:#cab;">
@@ -151,7 +152,34 @@
 			</div>
 		</div>
 		<hr>
-		<div id="ffot12" class="ffot" style="width:500px;height:300px;" contentEditable>
+		<div id="ffot11-2" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
+			<div  class="ffot-scrollbar" style="" >
+				<div class="ffot-container-left" style="">
+					<table class="ffot-header-00 test-table bg-box" style="background-color:#cab;">
+						<tr><td width="50" height="40">00</td><td width="50">00</td></tr>
+						<tr><td height="40">00</td><td>00</td></tr>
+					</table>
+					<table class="ffot-header-10 test-table bg-box" style="background-color:#abc;">
+						<tr><td height="100">10</td><td height="100">10</td></tr>
+						<tr><td height="50">20</td><td height="50">20</td></tr>
+						<tr><td height="50">30</td><td height="50">30</td></tr>
+					</table>
+				</div>
+				<div class="ffot-container-body" >
+					<table class="ffot-header-01 test-table bg-box" style="background-color:#bac;">
+						<tr><td height="100">0000000000000000000000</td><td>01</td><td>02</td></tr>
+						<tr><td height="100">00</td><td>01</td><td>02</td></tr>
+					</table>
+					<table class="ffot-content test-table bg-box" style="background-color:#dda;">
+						<tr><td height="100" width="60">H</td><td width="30">12</td><td width="40"></td></tr>
+						<tr><td height="50">21</td><td>22</td><td></td></tr>
+						<tr><td height="500">31</td><td>32</td><td></td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="ffot12" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;" contentEditable>
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-body" >
 					<table class="ffot-header-01 test-table bg-box" style="background-color:#bac;">
@@ -167,7 +195,7 @@
 			</div>
 		</div>
 		<hr>
-		<div id="ffot13" class="ffot" style="width:500px;height:300px;" contentEditable>
+		<div id="ffot13" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;" contentEditable>
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-body ffot-container-body-dir-row" >
 					<table class="ffot-header-10 test-table bg-box" style="background-color:#abc;">
@@ -184,7 +212,7 @@
 			</div>
 		</div>
 		<hr>
-		<div id="ffot21" class="ffot" style="width:500px;height:300px;">
+		<div id="ffot21" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-left" style="">
 					<table class="ffot-header-00 table table-bordered table-sm table-dark" style="">
@@ -276,7 +304,7 @@
 			</div>
 		</div>
 		<hr>
-		<div id="ffot23" class="ffot" style="width:500px;height:auto;">
+		<div id="ffot23" class="ffot" style="width:500px;max-width:90%;margin:0 auto;height:auto;">
 			<div  class="ffot-scrollbar" style="" >
 				<div class="ffot-container-left" style="">
 					<table class="ffot-header-00 table table-bordered table-sm table-dark" style="">

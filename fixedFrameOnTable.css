@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.ffot{
+.ffot *{
     box-sizing: border-box;
 }
 .ffot table{

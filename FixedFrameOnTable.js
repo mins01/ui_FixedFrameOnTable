@@ -24,10 +24,11 @@ FixedFrameOnTable.prototype.init = function(ffot){
 	this.content = ffot.querySelector('.ffot-content');
 	this.useSyncScrollTop = !!ffot.querySelector('.ffot-container-left .ffot-header-10');
 
+	this.initColgroup(this.content);
 	this.initColgroup(this.header00);
 	this.initColgroup(this.header01);
 	this.initColgroup(this.header10);
-	this.initColgroup(this.content);
+
 
 	this.initEvent();
 }
@@ -35,16 +36,16 @@ FixedFrameOnTable.prototype.initEvent = function(){
 	this.fbcResizeObserver  = new ResizeObserver(function(thisC){
 		return function(els){
 			for(let i=0,m=els.length;i<m;i++){
-				let el = els[i];
-				thisC.syncSizeContent(el)
+				// let el = els[i];
+				thisC.syncSizeContent( )
 			}
 		}
 	}(this));
 	this.flhResizeObserver  = new ResizeObserver(function(thisC){
 		return function(els){
 			for(let i=0,m=els.length;i<m;i++){
-				let el = els[i];
-				thisC.syncSizeHeader00(el)
+				// let el = els[i];
+				thisC.syncSizeHeader00( )
 			}
 		}
 	}(this));
@@ -74,7 +75,6 @@ FixedFrameOnTable.prototype.initColgroup = function(tbl){ //테이블에 colgrou
 	});
 	;
 	var colgroup = document.createElement('colgroup');
-	tbl.append(colgroup)
 	let i=0,col=null,rect=null;
 	let max_tds = max_tr.querySelectorAll('td,th');
 	while(i < max_count_td){
@@ -84,17 +84,25 @@ FixedFrameOnTable.prototype.initColgroup = function(tbl){ //테이블에 colgrou
 		colgroup.append(col);
 		i++;
 	}
+	tbl.append(colgroup)
 	return max_count_td;
 }
 FixedFrameOnTable.prototype.sync = function(){
-
+	this.syncSizeHeader00();
+	this.syncSizeContent();
 }
-FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
+FixedFrameOnTable.prototype.syncSizeHeader00 = function(){
 	let ffot= this.ffot
-	// let rect_flh = el.contentRect
-	let rect_flh = el.target.getBoundingClientRect();
+	if(!this.header00){return;}
+	if(this.header00.nodeName =='TABLE'){
+		let cw = 0;
+		this.header00.querySelectorAll('col').forEach(function(el){cw+=parseInt(el.width);});
+		this.header00.style.width=cw+'px';
+		if(this.header10) this.header10.style.width=cw+'px';
+	}
+
+	let rect_flh = this.header00.getBoundingClientRect();
 	this.header01.style.height = rect_flh.height+"px";
-	// this.containerBody.style.left = el.borderBoxSize[0].inlineSize+"px";
 	this.containerBody.style.left = rect_flh.width+"px";
 
 	if(this.header01){
@@ -115,26 +123,20 @@ FixedFrameOnTable.prototype.syncSizeHeader00 = function(el){
 	}
 
 }
-FixedFrameOnTable.prototype.syncSizeContent = function(el){
+FixedFrameOnTable.prototype.syncSizeContent = function(){
 	let ffot= this.ffot
-	let rect_fbc = el.contentRect
+
+	let rect_fbc = this.content.getBoundingClientRect();
 
 	if(this.content.nodeName =='TABLE'){
-		let rect_scrollbar = this.scrollbar.getBoundingClientRect();
-		let rect_content = this.content.getBoundingClientRect();
-		if(this.containerLeft){
-			let rect_containerLeft = this.containerLeft.getBoundingClientRect();
-			if(rect_scrollbar.width <= rect_containerLeft.width+rect_content.width ){
-				this.content.style.width="100%";
-			}else{
-				delete this.content.style.width;
-			}
+		if(this.scrollbar.scrollWidth > this.scrollbar.offsetWidth ){
+			this.content.style.width="100%";
+			if(this.header01) this.header01.style.width="100%";
 		}else{
-			if(rect_scrollbar.width <= rect_content.width ){
-				this.content.style.width="100%";
-			}else{
-				delete this.content.style.width;
-			}
+			let cw = 0;
+			this.content.querySelectorAll('col').forEach(function(el){cw+=parseInt(el.width);});
+			this.content.style.width=cw+'px';
+			if(this.header01) this.header01.style.width=cw+'px';
 		}
 	}
 
@@ -148,10 +150,10 @@ FixedFrameOnTable.prototype.syncSizeContent = function(el){
 	}
 
 	if(this.header01){
-		let width_tds = this.content.querySelectorAll('tr:first-child > *')
+		let width_cols = this.content.querySelectorAll('col')
 		let cols = this.header01.querySelectorAll('col').forEach((item, i) => {
-			let rect = width_tds[i].getBoundingClientRect();
-			item.width = rect.width;
+			if(!width_cols[i]){return}
+			item.width = width_cols[i].width;
 		});
 	}
 
