@@ -169,11 +169,21 @@ FixedFrameOnTable.initColgroup = function(tbl){ //테이블에 colgroup 이 있�
 	tbl.append(colgroup)
 	return max_count_td;
 }
-//--
-FixedFrameOnTable.tableToFfot = function(ffotNode,table,rowCount,colCount){
+/**
+ * [description]
+ * @param  {HTML_TABLE} table    원본테이블
+ * @param  {int} rowCount fixed row 수
+ * @param  {int} colCount fixed column 수
+ * @param  {DomNode} ffotNode null 일 경우 자동으로 만들어진다. node가 있을 경우 그 node에 ffot를 적용시킨다.
+ * @return {FixedFrameOnTable}          ffot 객체
+ */
+FixedFrameOnTable.tableToFfot = function(table,rowCount,colCount,ffotNode){
 	// let table = tableNode.cloneNode(true)
+	if(!ffotNode){
+		ffotNode = document.createElement('div');
+	}
 	FixedFrameOnTable.initColgroup(table);
-	console.log(table);
+	// console.log(table);
 	ffotNode.classList.add('ffot');
 	let scrollbar = document.createElement('div');
 	scrollbar.className = 'ffot-scrollbar';
@@ -226,43 +236,51 @@ FixedFrameOnTable.tableToFfot = function(ffotNode,table,rowCount,colCount){
 		console.error("테이블에서 가져올 수 있는 rowCount가 넘었습니다.");
 		return false;
 	}
-	let tr = null , cells = null , cell=null, ttr=null;
+	let tr = null , cells = null , cell=null, ttr1=null, ttr2=null, idx=0,idxSpan=0;
 	for(var i=0,m=rowCount;i<m;i++){ //상단 처리
 		tr = trs[i];
 		cells = tr.cells
-		ttr = tr.cloneNode(false)
-
-		for(var i2=0,m2=colCount;i2<m2;i2++){ //header00
-			ttr.append(cells[i2].cloneNode(true))
+		ttr1 = tr.cloneNode(false)
+		ttr2 = tr.cloneNode(false)
+		idx = 0;
+		idxSpan = 0;
+		while(cells[idx]){
+			if(idxSpan < colCount){
+				ttr1.append(cells[idx].cloneNode(true))
+			}else{
+				ttr2.append(cells[idx].cloneNode(true))
+			}
+			idxSpan+=cells[idx].colSpan;
+			idx++;
 		}
 		if(header00){
-			header00.tBodies[0].append(ttr)
-		}
-		ttr = tr.cloneNode(false)
-		for(i2=m2,m2=cells.length;i2<m2;i2++){ //header01
-			ttr.append(cells[i2].cloneNode(true))
+			header00.tBodies[0].append(ttr1)
 		}
 		if(header01){
-			header01.tBodies[0].append(ttr)
+			header01.tBodies[0].append(ttr2);
 		}
 	}
-
-	for(i=m,m=trs.length;i<m;i++){ //하단 처리
+	for(m=trs.length;i<m;i++){ //하단 처리
 		tr = trs[i];
 		cells = tr.cells
-		ttr = tr.cloneNode(false)
-		for(var i2=0,m2=colCount;i2<m2;i2++){ //header10
-			ttr.append(cells[i2].cloneNode(true))
+		ttr1 = tr.cloneNode(false)
+		ttr2 = tr.cloneNode(false)
+		idx = 0;
+		idxSpan = 0;
+		while(cells[idx]){
+			if(idxSpan < colCount){
+				ttr1.append(cells[idx].cloneNode(true))
+			}else{
+				ttr2.append(cells[idx].cloneNode(true))
+			}
+			idxSpan+=cells[idx].colSpan;
+			idx++;
 		}
 		if(header10){
-			header10.tBodies[0].append(ttr)
-		}
-		ttr = tr.cloneNode(false)
-		for(i2=m2,m2=cells.length;i2<m2;i2++){ //content
-			ttr.append(cells[i2].cloneNode(true))
+			header10.tBodies[0].append(ttr1)
 		}
 		if(content){
-			content.tBodies[0].append(ttr)
+			content.tBodies[0].append(ttr2);
 		}
 	}
 	//-- colgroup 복사
@@ -275,19 +293,6 @@ FixedFrameOnTable.tableToFfot = function(ffotNode,table,rowCount,colCount){
 		if(header01) header01.querySelector('colgroup').append(cols[i2].cloneNode(true));
 		if(content) content.querySelector('colgroup').append(cols[i2].cloneNode(true));
 	}
-
-
-	// for(let i=0,m=trs.length;i<m;i++){
-	// 	tr = trs[i];
-	// 	for(var i2=0,m2=colCount;i2<m2;i++){ //header10
-	// 		// htrs.push(trs[i])
-	// 	}
-	// 	for(i2=m2,m2=tr.cells.length;i2<m2;i++){ //content
-	// 		// htrs.push(trs[i])
-	// 	}
-	// }
-	// console.log(htrs);
-	// let h00trs = []
 
 	return new FixedFrameOnTable(ffotNode);
 

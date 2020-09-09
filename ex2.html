@@ -91,12 +91,16 @@
 	<script>
 	var ffot01 = null;
 	$(function(){
-		ffot01= FixedFrameOnTable.tableToFfot(document.querySelector('#ffot01'),document.querySelector('#tbl01'),2,2)
+		ffot01= FixedFrameOnTable.tableToFfot(document.querySelector('#tbl01'),2,2,document.querySelector('#ffot01'))
 	})
 
 	function test(rowCount,colCount){
-		document.querySelector('#ffot01').innerHTML = '';
-		ffot01= FixedFrameOnTable.tableToFfot(document.querySelector('#ffot01'),document.querySelector('#tbl01'),rowCount,colCount)
+		document.querySelector('#ffot-box').innerHTML = '';
+		// ffot01= FixedFrameOnTable.tableToFfot(document.querySelector('#tbl01'),rowCount,colCount,document.querySelector('#ffot01'))
+		ffot01= FixedFrameOnTable.tableToFfot(document.querySelector('#tbl01'),rowCount,colCount)
+		ffot01.ffot.style.width="100%"
+		ffot01.ffot.style.height="100%"
+		document.querySelector('#ffot-box').append(ffot01.ffot);
 	}
 	</script>
 
@@ -108,6 +112,12 @@
 	<div class="container">
 		<h1>fixed frame on table</h1>
 		<h2>변환 FFOT</h2>
+		<div>
+			주의
+			<ul>
+				<li>colSpan 은 자동 처리가능.</li>
+			</ul>
+		</div>
 		<div>
 
 			<button onclick=" test(0,0)">0,0</button>
@@ -152,9 +162,13 @@
 			<button onclick=" test(5,4)">5,4</button>
 			<button onclick=" test(5,5)">5,5</button>
 			<br>
+			<button onclick=" test(6,6)">6,6</button>
 		</div>
-		<div id="ffot01" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
+		<div id="ffot-box" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
+			<div id="ffot01" style="width:500px;max-width:90%;margin:0 auto;height:300px;">
+			</div>
 		</div>
+
 
 
 		<h2>원본테이블</h2>
@@ -162,8 +176,8 @@
 			<thead>
 				<tr>
 					<th width="50" height="20">00</th>
-					<th width="60">01</th>
-					<th width="100">02</th>
+					<th width="60" colspan="2">01</th>
+					<!-- <th width="100">02</th> -->
 					<th width="200">03</th>
 					<th width="300">04</th>
 				</tr>
@@ -176,7 +190,7 @@
 				</tr>
 			</thead>
 			<tr>
-				<td height="100">20</td>
+				<td height="100" >20</td>
 				<td height="100">21</td>
 				<td height="100">22</td>
 				<td height="100">23</td>
