@@ -51,8 +51,9 @@
 	</style>
 	<script src="FixedFrameOnTable.js"></script>
 	<script>
+	var ffot01 = null;
 	$(function(){
-		var ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
+		ffot01 = new FixedFrameOnTable(document.querySelector('#ffot01'));
 
 	})
 	</script>
@@ -346,17 +347,14 @@
 							<thead style="background-color:#eee;">
 
 								<tr>
+									<th class="text-center align-middle" colspan="4">정보</th>
+									<th class="text-center align-middle" colspan="13">랭크 2020-08-26 ~ 2020-09-07 (12일간)</th>
+								</tr>
+								<tr>
 									<th class="text-center align-middle" rowspan="2" height="32">평균<br>랭크</th>
 									<th class="text-center align-middle" rowspan="2">표준<br>편차</th>
 									<th class="text-center align-middle" rowspan="2">상승세</th>
 									<th class="text-center align-middle" rowspan="2">총<br>일자</th>
-									<th class="text-center align-middle" colspan="13">랭크 2020-08-26 ~ 2020-09-07 (12일간)</th>
-								</tr>
-								<tr>
-									<!-- <th class="text-center align-middle">평균<br>랭크</th>
-									<th class="text-center align-middle">표준<br>편차</th>
-									<th class="text-center align-middle">상승세</th>
-									<th class="text-center align-middle">총<br>일자</th> -->
 									<th style="min-width:2.5em;" class="text-center align-middle" height="62">08<br>
 										26</th>
 										<th style="min-width:2.5em;" class="text-center align-middle">08<br>

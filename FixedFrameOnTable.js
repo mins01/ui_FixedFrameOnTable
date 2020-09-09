@@ -141,6 +141,67 @@ FixedFrameOnTable.prototype.syncScrollTop = function(ta){
 	el.style.transform="translateY(-"+ta.scrollTop+"px)";
 }
 
+FixedFrameOnTable.prototype.toData = function(){
+	var rows = [];
+	var row = null,tr=null,cell=null,def_i;
+	if(this.header00){
+		let header00_json = FixedFrameOnTable.tableToData(this.header00)
+		rows = header00_json;
+		def_i = rows.length;
+	}
+	if(this.header01){
+		let header01_json =FixedFrameOnTable.tableToData(this.header01)
+		if(rows.length>0){
+			header01_json.forEach((row, i) => {
+				rows[i] = rows[i].concat(row);
+			});
+		}else{
+			rows = header01_json;
+			def_i = rows.length;
+		}
+	}
+	if(this.header10){
+		let header10_json =FixedFrameOnTable.tableToData(this.header10)
+		header10_json.forEach((row, i) => {
+			rows.push(row);
+		});
+
+	}
+	if(this.content){
+		let content_json =FixedFrameOnTable.tableToData(this.content)
+		if(rows.length>0){
+			content_json.forEach((row, i) => {
+				rows[i+def_i] = rows[i+def_i].concat(row);
+			});
+		}
+	}
+	return rows
+}
+//--
+FixedFrameOnTable.dataToCsv = function(rows){
+	var csvRows = [],txt='';
+	rows.forEach((row, i) => {
+		csvRows.push('"'+row.join('","').replace(/(\r\n|\r|\n)/g," ")+'"');
+	});
+	return csvRows.join("\n");
+}
+//--
+FixedFrameOnTable.tableToData = function(table){
+	var rows = [];
+	var row = null,tr=null,cell=null;
+	if(table){
+		for(var i=0,m=table.rows.length;i<m;i++){
+			tr = table.rows[i]
+			row = []
+			for(var i2=0,m2=tr.cells.length;i2<m2;i2++){
+				cell = tr.cells[i2];
+				row.push(cell.innerText)
+			}
+			rows.push(row)
+		}
+	}
+	return rows;
+}
 //--
 FixedFrameOnTable.initColgroup = function(tbl){ //테이블에 colgroup 이 있는지 체크하고 없으면, 만든다.
 	if(!tbl || tbl.nodeName!='TABLE'){ return false;}
