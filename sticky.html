@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko" >
+<head>
+	<title>sticky frame on table</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://www.mins01.com/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script src="/js/ForGoogle.js"></script>
+	<!-- google analytics -->
+	<script>ForGoogle.analytics()</script>
+
+
+	<!-- jquery 관련 -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+	<!-- 부트스트랩 4 : IE8지원안됨! -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<!-- vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<!-- meta og -->
+
+	<meta property="og:title" content="fixed frame on table">
+	<meta property="og:description" content="fixed frame on table">
+	<meta name="og:image" content="http://www.mins01.com/img/logo.gif">
+	<meta property="og:image:width" content="190">
+	<meta property="og:image:height" content="70" />
+	<meta property="og:site_name" content="fixed frame on table" />
+	<meta property="og:type" content="website">
+
+	<!-- //meta og -->
+	<style>
+		.sfot{overflow: auto;}
+		.sfot table{
+			table-layout: fixed;
+			position: relative;
+			border-collapse: separate;
+			border-spacing: 0;
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		.sfot td , .sfot th{
+			border: 1px solid #ccc;
+			background-color: #fff;
+		}
+		.sfot-head{
+			position: sticky;
+			top:0;
+			z-index: 20;
+		}
+		.sfot-left{
+			position: sticky;
+			left: 0;
+			z-index: 10;
+		}
+		.sfot-head.sfot-left{
+			z-index: 30;
+		}
+
+		.sfot-head{
+			background-color: #abc !important;
+		}
+		.sfot-left{
+			background-color: #cba !important;
+		}
+		.sfot-head.sfot-left{
+			background-color: #caa !important;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container-x">
+		<h1>sticky frame on table</h1>
+		<div>
+			주의
+			<ul>
+				<li>css postion sticky 로만 사용해서 제어</li>
+				<li>적용이 1을 초과할 경우 방향에 따라서 top,left,right,bottom 등을 선언해야함</li>
+			</ul>
+		</div>
+		<div>
+			<div class="sfot" data-sfot-left="2"  style="width:300px; height:300px; margin:0 auto;">
+				<table class="table ">
+					<colgroup>
+						<col style="width:100px">
+						<col style="width:70px">
+						<col style="width:70px">
+						<col style="width:70px">
+						<col style="width:70px">
+					</colgroup>
+					<tr>
+						<td class="sfot-left sfot-head">1</td>
+						<td class="sfot-left sfot-head" style="left:100px">2</td>
+						<td class="sfot-head">3</td>
+						<td class="sfot-head">4</td>
+						<td class="sfot-head">5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left sfot-head" style="top:50px">1</td>
+						<td class="sfot-left sfot-head" style="top:50px;left:100px">2</td>
+						<td class="sfot-head" style="top:50px">3</td>
+						<td class="sfot-head" style="top:50px">4</td>
+						<td class="sfot-head" style="top:50px">5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left" >1</td>
+						<td class="sfot-left"  style="left:100px">2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left" >1</td>
+						<td class="sfot-left"  style="left:100px">2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left" >1</td>
+						<td class="sfot-left"  style="left:100px">2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left" >1</td>
+						<td class="sfot-left"  style="left:100px">2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td class="sfot-left" >1</td>
+						<td class="sfot-left"  style="left:100px">2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
